@@ -21,8 +21,10 @@ export function parseWords(items: LRCItem[], length?: number): ParsedWord[][] {
     words.push({ word: text, startTime, endTime, line });
   }
 
-  return words.reduce((lines: ParsedWord[][], word) => {
-    lines[word.line] = [...(lines[word.line] || []), word];
-    return lines;
-  }, []);
+  const maxLine = Math.max(...words.map((w) => w.line));
+  const lines: ParsedWord[][] = Array.from({ length: maxLine + 1 }, () => []);
+  for (const word of words) {
+    lines[word.line].push(word);
+  }
+  return lines;
 }

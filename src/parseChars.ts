@@ -33,8 +33,10 @@ export function parseChars(items: LRCItem[], length?: number): ParsedChar[][] {
     }
   }
 
-  return chars.reduce((lines: ParsedChar[][], char) => {
-    lines[char.line] = [...(lines[char.line] || []), char];
-    return lines;
-  }, []);
+  const maxLine = Math.max(...chars.map((c) => c.line));
+  const lines: ParsedChar[][] = Array.from({ length: maxLine + 1 }, () => []);
+  for (const char of chars) {
+    lines[char.line].push(char);
+  }
+  return lines;
 }
