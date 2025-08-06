@@ -1,5 +1,5 @@
 {
-  "name": "lrc-parser",
+  "name": "lrc-timing-parser",
   "version": "0.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
