@@ -1,13 +1,13 @@
 {
   "name": "lrc-parser",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
     "build": "run-p build:js build:types",
     "build:js": "cross-env NODE_ENV=production rollup -c",
     "build:types": "tsc --emitDeclarationOnly",
-    "clean:lib": "del-cli dist",
+    "clean": "del-cli dist",
     "test": "node --test --experimental-strip-types \"test/**/*.mts\""
   },
   "repository": {
@@ -16,7 +16,7 @@
   },
   "keywords": [],
   "author": "Jun Kato <i@junkato.jp>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/arcatdmz/lrc-parser/issues"
   },
