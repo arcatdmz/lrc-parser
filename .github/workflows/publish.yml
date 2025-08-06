@@ -1,0 +1,33 @@
+name: Publish to npm registry
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: https://${{ secrets.NPR_DOMAIN }}/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the library
+        run: npm run build
+
+      - name: Publish to private registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPR_AUTH_TOKEN }}
+        run: |
+          npm publish \
+            --registry=https://${{ secrets.NPR_DOMAIN }}/
