@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arcatdmz/lrc-parser.git"
+    "url": "git+https://github.com/arcatdmz/lrc-timing-parser.git"
   },
   "keywords": [],
   "author": "Jun Kato <i@junkato.jp>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arcatdmz/lrc-parser/issues"
+    "url": "https://github.com/arcatdmz/lrc-timing-parser/issues"
   },
-  "homepage": "https://github.com/arcatdmz/lrc-parser#readme",
+  "homepage": "https://github.com/arcatdmz/lrc-timing-parser#readme",
   "description": "",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
